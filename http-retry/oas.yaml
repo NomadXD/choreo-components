@@ -1,0 +1,14 @@
+openapi: 3.0.0
+info:
+  title: HTTP Retry REST API
+  version: 1.0.0
+  description: A simple REST API for managing books with hardcoded responses.
+
+servers:
+  - url: /
+    description: Base URL for the API
+
+paths:
+  /500:
+    get:
+      summary: List all books
