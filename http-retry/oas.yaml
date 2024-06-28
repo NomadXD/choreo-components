@@ -1,14 +1,33 @@
-openapi: 3.0.0
+openapi: 3.0.1
 info:
-  title: HTTP Retry REST API
+  title: 500 Error Endpoint API
+  description: API to trigger a 500 Internal Server Error and log requests
   version: 1.0.0
-  description: A simple REST API for managing books with hardcoded responses.
-
 servers:
-  - url: /
-    description: Base URL for the API
+  - url: http://localhost:5000
+    description: Local server
 
 paths:
   /500:
     get:
-      summary: List all books
+      summary: Trigger a 500 Internal Server Error
+      description: Endpoint to trigger a 500 error and log the request
+      responses:
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Internal Server Error
+    post:
+      summary: Trigger a 500 Internal Server Error
+      description: Endpoint to trigger a 500 error and log the request
+      responses:
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Internal Server Error
