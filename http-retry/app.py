@@ -11,6 +11,7 @@ logging.basicConfig(filename='error.log', level=logging.INFO)
 def trigger_500():
     # Log the request
     logging.info(f'Request received: {request.method} {request.path} {request.remote_addr}')
+    Print("Request received: {request.method} {request.path} {request.remote_addr}")
     
     # Return a 500 status code
     return 'Internal Server Error', 500
