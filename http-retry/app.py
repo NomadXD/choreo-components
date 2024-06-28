@@ -5,13 +5,17 @@ import logging
 app = Flask(__name__)
 
 # Configure logging
-logging.basicConfig(filename='error.log', level=logging.INFO)
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    handlers=[
+                        logging.FileHandler('error.log'),
+                        logging.StreamHandler()
+                    ])
 
 @app.route('/500', methods=['GET', 'POST'])
 def trigger_500():
     # Log the request
     logging.info(f'Request received: {request.method} {request.path} {request.remote_addr}')
-    Print("Request received: {request.method} {request.path} {request.remote_addr}")
     
     # Return a 500 status code
     return 'Internal Server Error', 500
