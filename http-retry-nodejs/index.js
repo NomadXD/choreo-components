@@ -3,7 +3,7 @@ const fs = require("fs");
 const morgan = require("morgan");
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 // Create a write stream (in append mode) for logging
 const logStream = fs.createWriteStream("error.log", { flags: "a" });
