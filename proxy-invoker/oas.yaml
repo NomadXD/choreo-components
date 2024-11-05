@@ -1,0 +1,14 @@
+openapi: 3.0.1
+info:
+  title: Proxy Invoker API
+  description: API to invoke HTTP requests from the component
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Local server
+
+paths:
+  /proxy:
+    post:
+      summary: Invoke a HTTP request by providing URL, Method, Headers and Body.
+      description: Invoke a HTTP request by providing URL, Method, Headers and Body.
